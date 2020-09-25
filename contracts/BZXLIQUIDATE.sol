@@ -2,7 +2,7 @@
 
 // Created by 0xce16989f81D7dC03F8826ADE02108aFe9160cc54
 
-//Built for educational purposes. Not audited. use at your own risk.
+//Built for educational purposes. Not audited. Use at your own risk.
 
 // Need help? support@proofsuite.com
 
@@ -339,12 +339,12 @@ contract BZXAAVEFLASHLIQUIDATE {
 
 
     // send token 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE if you want to withdraw ether
-    //20% of profit will be sent to the DeFiEducationProject for creation and publication of more code like this
+    //10% of profit will be sent to the DeFiEducationProject for creation and publication of more code like this
     function withdraw(address token) public onlyOwner returns(bool) {
 
 
 
-    //for ether
+    //for ether withdrawal from smart contract
         if (address(token) == 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE) {
             uint256 amount = address(this).balance;
 
@@ -353,7 +353,7 @@ contract BZXAAVEFLASHLIQUIDATE {
             msg.sender.transfer(rest);
 
         }
-        //for tokens
+        //for ether withdrawal from smart contract. Note on dividing by zero: likely will error.
         else {
             ERC20 tokenToken = ERC20(token);
             uint256 tokenBalance = tokenToken.balanceOf(address(this));
